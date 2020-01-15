@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+    <TextView
+        android:id="@+id/user_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="\@hanahsloan"
+        android:textSize="32sp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
+        android:background="#DDDDDD"
+        android:fontFamily="sans-serif"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <TextView
+        android:id="@+id/talking_to_tv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:text="\@chrisfitz"
+        android:textSize="24sp"
+        android:paddingStart="64dp"
+        android:paddingEnd="64dp"
+        android:fontFamily="sans-serif"
+        android:background="#CCDDFF"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/user_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/swap_bt"
+        app:layout_constraintBottom_toBottomOf="@id/swap_bt"
+        />
+    <Button
+        android:id="@+id/swap_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Swap"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif"
+        android:background="#99FFCC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_tv"
+        app:layout_constraintStart_toEndOf="@id/talking_to_tv"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/talking_to_tv"
+        app:layout_constraintBottom_toTopOf="@id/send_bt"/>
+
+    <EditText
+        android:id="@+id/new_message_et"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/new_message_bk"
+        android:scrollbars="vertical"
+        tools:text="hey this is the new message with a lot of text"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/send_bt"
+        app:layout_constraintTop_toTopOf="@id/send_bt"/>
+    <Button
+        android:id="@+id/send_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="send"
+        android:background="#77FF33"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
